@@ -5,7 +5,7 @@ namespace Services
     public class StudentService
     {
         private List<Student> _students;
-         
+
         public StudentService()
         {
             if (_students == null)
@@ -43,12 +43,29 @@ namespace Services
         {
             foreach (var student in _students)
             {
-                Console.WriteLine($"Student Id {item.Id}");
-                Console.WriteLine($"Student Name {item.Name}");
-                Console.WriteLine($"Student Address {item.Address}");
-                Console.WriteLine($"Student Email Address {item.EmailAddress}");
-                Console.WriteLine($"Created Date {item.CreatedDateTime}");
+                Console.WriteLine($"Student Id {student.Id}");
+                Console.WriteLine($"Student Name {student.Name}");
+                Console.WriteLine($"Student Address {student.Address}");
+                Console.WriteLine($"Student Email Address {student.EmailAddress}");
+                Console.WriteLine($"Created Date {student.CreatedDateTime}");
                 Console.WriteLine($"**********************************************************");
+            }
+        }
+
+        public void SearchStudentById(int id)
+        {
+            foreach (var student in _students)
+            {
+                if (student.Id == id)
+                {
+                    Console.WriteLine($"Student Id {student.Id}");
+                    Console.WriteLine($"Student Name {student.Name}");
+                    Console.WriteLine($"Student Address {student.Address}");
+                    Console.WriteLine($"Student Email Address {student.EmailAddress}");
+                    Console.WriteLine($"Created Date {student.CreatedDateTime}");
+                    Console.WriteLine($"**********************************************************");
+                    break;
+                }
             }
         }
     }
