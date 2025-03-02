@@ -41,7 +41,7 @@ namespace Services
 
         public void PrintAllStudent()
         {
-            foreach (var item in _students)
+            foreach (var student in _students)
             {
                 Console.WriteLine($"Student Id {item.Id}");
                 Console.WriteLine($"Student Name {item.Name}");
